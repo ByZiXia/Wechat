@@ -1,0 +1,33 @@
+<view class="container" style="padding: 20px;">
+  <!-- 文本框区域 -->
+  <textarea placeholder="粘贴多个时间数据，每行一个" maxlength="1000" bindinput="bindTextInput"
+            style="width: 100%; height: 150px; font-size: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" />
+
+  <!-- 平均需求量输入 -->
+  <view style="margin-top: 20px;">
+    <input placeholder="输入平均需求量 (mCi)" type="number" bindinput="bindAverageDosageInput"
+           style="width: 100%; font-size: 16px; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" />
+  </view>
+
+  <!-- 按钮区域 -->
+  <view style="margin-top: 20px; display: flex; justify-content: space-between;">
+    <button bindtap="parseData" style="flex: 1; margin-right: 10px; background-color: #4CAF50; color: white; font-size: 16px; padding: 10px; border-radius: 5px;">
+      解析数据
+    </button>
+    <button bindtap="calculateDosage" style="flex: 1; margin-left: 10px; background-color: #2196F3; color: white; font-size: 16px; padding: 10px; border-radius: 5px;">
+      计算剂量
+    </button>
+  </view>
+
+  <!-- 显示区域 -->
+  <view style="margin-top: 30px; padding: 20px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 5px;">
+    <view style="margin-bottom: 10px;">
+      <text style="font-size: 18px; font-weight: bold; color: #333;">总患者数量:</text>
+      <text style="font-size: 18px; color: #555;"> {{totalPatients}}</text>
+    </view>
+    <view>
+      <text style="font-size: 18px; font-weight: bold; color: #333;">总剂量:</text>
+      <text style="font-size: 18px; color: #555;"> {{totalDosage}} mCi</text>
+    </view>
+  </view>
+</view>
